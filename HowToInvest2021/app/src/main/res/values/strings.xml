@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HowToInvest2021</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="format_leverage">#%sLeverage</string>
+    <string name="format_effort">#%sEffort</string>
+    <string name="string_about_app">How To Invest 2021 is mainly aimed at educating and providing information for those who want to learn more about investments. The app developer wants to thank you for taking the time to use this app. We wish you many successes and assets in your dreams and future.</string>
+
+</resources>

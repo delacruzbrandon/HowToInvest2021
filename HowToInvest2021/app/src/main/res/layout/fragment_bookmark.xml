@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.BookmarkFragment">
+
+    <data>
+        <variable
+            name="clickHandler"
+            type="com.howto.invest2021.view.BookmarkFragment" />
+
+        <variable
+            name="bookmarkViewModel"
+            type="com.howto.invest2021.viewmodel.BookmarkViewModel" />
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:elevation="0dp"
+            android:elevation="0dp"
+            android:background="@null">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/imageButton_fragmentBookmarks_goBack"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@null"
+                        android:fontFamily="@font/moderna_regular"
+                        android:padding="32dp"
+                        android:onClick="@{() -> clickHandler.onBack()}"
+                        android:src="@drawable/ic_round_chevron_left_24"
+                        android:tint="@color/stale_black"
+                        app:layout_constraintBottom_toBottomOf="@id/textView_bookmarks"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textView_bookmarks" />
+
+                    <TextView
+                        android:id="@+id/textView_bookmarks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_marginVertical="40dp"
+                        android:fontFamily="@font/moderna_regular"
+                        android:text="Bookmarks"
+                        android:textColor="@color/main_green"
+                        android:textSize="22sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imageButton_fragmentBookmarks_goBack"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton_fragmentBookmarks_delete"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@null"
+                        android:padding="32dp"
+                        android:onClick="@{() -> bookmarkViewModel.onClearData()}"
+                        android:tint="@color/stale_black"
+                        android:src="@drawable/ic_round_delete_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView_bookmarks"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textView_bookmarks" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_bookmarkFragment_storage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

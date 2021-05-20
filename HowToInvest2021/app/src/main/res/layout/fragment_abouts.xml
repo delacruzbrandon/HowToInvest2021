@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="view.AboutsFragment">
+
+    <data>
+        <variable
+            name="clickHandler"
+            type="com.howto.invest2021.view.AboutsFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/imageButton_fragmentAbouts_goBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:onClick="@{() -> clickHandler.onBack()}"
+        android:src="@drawable/ic_round_chevron_left_24"
+        android:background="@null"
+        android:tint="@color/stale_black"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_aboutUs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_aboutUs" />
+
+    <TextView
+        android:id="@+id/textView_aboutUs"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:fontFamily="@font/moderna_regular"
+        android:textSize="22sp"
+        android:textColor="@color/main_green"
+        android:layout_marginTop="40dp"
+        android:text="About us"
+        app:layout_constraintStart_toEndOf="@+id/imageButton_fragmentAbouts_goBack"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Our Mission"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/stale_black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_aboutUs" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/string_about_app"
+        android:textColor="@color/faded_black"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/ic_logo"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

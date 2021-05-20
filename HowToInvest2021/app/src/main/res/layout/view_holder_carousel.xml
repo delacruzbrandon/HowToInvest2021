@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="216dp"
+        android:layout_height="272dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/roundImageView_carouselViewHolder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/stock_photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius="8dp" />
+
+        <ImageView
+            android:id="@+id/blurLayout_carouselViewHolder"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_margin="16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_blur"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/textView_carouselViewHolder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/poppins_medium"
+            android:padding="16dp"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@+id/blurLayout_carouselViewHolder"
+            app:layout_constraintEnd_toEndOf="@+id/blurLayout_carouselViewHolder"
+            app:layout_constraintStart_toStartOf="@+id/blurLayout_carouselViewHolder"
+            app:layout_constraintTop_toTopOf="@+id/blurLayout_carouselViewHolder"
+            android:text="Freelance" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
